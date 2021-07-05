@@ -1,9 +1,9 @@
 /**
- *Submitted for verification at BscScan.com on 2021-03-31
+ *Submitted for verification at EtherScan.com on 2021-XX-XX
 */
 
 // SPDX-License-Identifier: MTI
-//Charizard Smart Contract
+//MyBurnToken Smart Contract
 
 pragma solidity 0.6.12;
 
@@ -14,7 +14,7 @@ abstract contract Context {
     }
 
     function _msgData() internal view virtual returns (bytes memory) {
-        this; // silence state mutability warning without generating bytecode - see https://github.com/ethereum/solidity/issues/2691
+        this; // advertencia de mutabilidad del estado de silencio sin generar bytecode - ver https://github.com/ethereum/solidity/issues/2691
         return msg.data;
     }
 }
@@ -22,75 +22,74 @@ abstract contract Context {
 
 
 /**
- * @dev Interface of the ERC20 standard as defined in the EIP.
+ * @dev Interfaz del estándar ERC20 como se define en el EIP.
  */
 interface IERC20 {
     /**
-     * @dev Returns the amount of tokens in existence.
+     * @dev Devuelve la cantidad de tokens existentes..
      */
     function totalSupply() external view returns (uint256);
 
     /**
-     * @dev Returns the amount of tokens owned by `account`.
+     * @dev Devuelve la cantidad de tokens que posee la `cuenta`.
      */
     function balanceOf(address account) external view returns (uint256);
 
     /**
-     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     * @dev Mueve los tokens de "monto" de la cuenta de la persona que llama al "destinatario".
      *
-     * Returns a boolean value indicating whether the operation succeeded.
+     * Devuelve un valor booleano que indica si la operación se realizó correctamente..
      *
-     * Emits a {Transfer} event.
+     * Emite un evento de {Transfer}.
      */
     function transfer(address recipient, uint256 amount) external returns (bool);
 
     /**
-     * @dev Returns the remaining number of tokens that `spender` will be
-     * allowed to spend on behalf of `owner` through {transferFrom}. This is
-     * zero by default.
+     * @dev Devuelve el número restante de tokens que el "gastador" podrá gastar
+     * en nombre del "propietario" a través de {transferFrom}.
+     * Esto es cero por defecto.
      *
-     * This value changes when {approve} or {transferFrom} are called.
+     * Este valor cambia cuando se llama a {approve} o {transferFrom}.
      */
     function allowance(address owner, address spender) external view returns (uint256);
 
     /**
-     * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.
+     * @dev Establece `monto` como la asignación de` gastador` sobre los tokens de la persona que llama.
      *
-     * Returns a boolean value indicating whether the operation succeeded.
+     * Devuelve un valor booleano que indica si la operación se realizó correctamente.
      *
-     * IMPORTANT: Beware that changing an allowance with this method brings the risk
-     * that someone may use both the old and the new allowance by unfortunate
-     * transaction ordering. One possible solution to mitigate this race
-     * condition is to first reduce the spender's allowance to 0 and set the
-     * desired value afterwards:
+     * IMPORTANTE: tenga en cuenta que cambiar una asignación con este método conlleva
+     * el riesgo de que alguien pueda usar tanto la asignación anterior como la nueva
+     * mediante un pedido de transacción desafortunado.
+     * Una posible solución para mitigar esta condición de carrera es reducir
+     * primero la asignación del gastador a 0 y luego establecer el valor deseado.:
      * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
      *
-     * Emits an {Approval} event.
+     * Emite un evento {Approval}.
      */
     function approve(address spender, uint256 amount) external returns (bool);
 
     /**
-     * @dev Moves `amount` tokens from `sender` to `recipient` using the
-     * allowance mechanism. `amount` is then deducted from the caller's
-     * allowance.
+     * @dev Mueve los tokens de "cantidad" del "remitente" al "destinatario"
+     * mediante el mecanismo de asignación.
+     * A continuación, se deduce la "cantidad" de la asignación de la persona que llama.
      *
-     * Returns a boolean value indicating whether the operation succeeded.
+     * Devuelve un valor booleano que indica si la operación se realizó correctamente.
      *
      * Emits a {Transfer} event.
      */
     function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
 
     /**
-     * @dev Emitted when `value` tokens are moved from one account (`from`) to
-     * another (`to`).
+     * @dev Se emite cuando los tokens de "valor" se mueven de una cuenta ("de") a otra ("a").
      *
-     * Note that `value` may be zero.
+     * Tenga en cuenta que el "valor" puede ser cero.
      */
     event Transfer(address indexed from, address indexed to, uint256 value);
 
     /**
-     * @dev Emitted when the allowance of a `spender` for an `owner` is set by
-     * a call to {approve}. `value` is the new allowance.
+     * @dev Se emite cuando la asignación de un "gastador" para un "propietario"
+     * se establece mediante una llamada a {aprobar}. `value` es la nueva asignación.
      */
     event Approval(address indexed owner, address indexed spender, uint256 value);
 }
@@ -473,8 +472,8 @@ contract Charizad is Context, IERC20, Ownable {
     uint256 private _tFeeTotal;
     uint256 private _tBurnTotal;
 
-    string private constant _name = 'Charizard Token';
-    string private constant _symbol = 'CHZ006';
+    string private constant _name = 'My Token';
+    string private constant _symbol = 'MTK';
     
     uint256 private _taxFee = 300;
     uint256 private _burnFee = 200;
