@@ -1,9 +1,9 @@
 /**
- *Submitted for verification at EtherScan.com on 2021-XX-XX
+ * Enviado a EtherScan.com para verificación el 2021-XX-XX
 */
 
 // SPDX-License-Identifier: MTI
-//MyBurnToken Smart Contract
+//MY_TOKEN Smart Contract
 
 pragma solidity 0.6.12;
 
@@ -26,19 +26,19 @@ abstract contract Context {
  */
 interface IERC20 {
     /**
-     * @dev Devuelve la cantidad de tokens existentes..
+     * @dev Devuelve la cantidad de tokens existentes.
      */
     function totalSupply() external view returns (uint256);
 
     /**
-     * @dev Devuelve la cantidad de tokens que posee la `cuenta`.
+     * @dev Devuelve la cantidad de tokens que posee la cuenta ('account').
      */
     function balanceOf(address account) external view returns (uint256);
 
     /**
-     * @dev Mueve los tokens de "monto" de la cuenta de la persona que llama al "destinatario".
+     * @dev Mueve el monto de tokens ('amount') de la cuenta de la persona que llama al destinatario ('recipient').
      *
-     * Devuelve un valor booleano que indica si la operación se realizó correctamente..
+     * Devuelve un valor booleano que indica si la operación se realizó correctamente.
      *
      * Emite un evento de {Transfer}.
      */
